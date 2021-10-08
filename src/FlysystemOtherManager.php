@@ -355,7 +355,7 @@ class FlysystemOtherManager extends FlysystemManager
                 }
                 $share = $server->getShare($config['path']);
 
-                return $this->createFlysystem(new \RobGridley\Flysystem\Smb\SmbAdapter($share), $config);
+                return $this->createFlysystem(new \RobGridley\Flysystem\Smb\SmbAdapter($share, ($config['prefix'] ?? null)), $config);
             });
         }
 
